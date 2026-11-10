@@ -1,0 +1,49 @@
+.gameContainer {
+  width: 100%;
+  height: 400px;
+  background-color: #5c94fc;
+  position: relative;
+  overflow: hidden;
+  font-family: sans-serif;
+  text-align: left !important;
+  display: block !important;
+}
+
+.header {
+  color: white;
+  text-align: center;
+  padding-top: 10px;
+}
+
+/* આ સીએસએસ લોજિક બધાને આપોઆપ ડાબી બાજુ દોડાવશે */
+.moving {
+  position: absolute !important;
+  font-size: 35px;
+  animation: runLeft 6s linear infinite;
+}
+
+@keyframes runLeft {
+  0% { left: 100%; }
+  100% { left: -50px; }
+}
+
+/* કોણ કઈ જગ્યાએ અને ક્યારે આવશે તેની સાદી ગોઠવણી */
+.coin { bottom: 140px; animation-delay: 0s; }
+.owl  { bottom: 40px;  animation-delay: 2s; }
+.bat  { bottom: 90px;  animation-delay: 4s; }
+
+.mario {
+  width: 40px;
+  height: 40px;
+  position: absolute !important;
+  transition: bottom 0.2s ease-out;
+}
+
+.ground {
+  width: 100%;
+  height: 40px;
+  background-color: #fcb47c;
+  position: absolute !important;
+  bottom: 0 !important;
+  left: 0 !important;
+}

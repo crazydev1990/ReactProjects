@@ -1,0 +1,371 @@
+/* આખી એપનું સ્મૂથ બેકગ્રાઉન્ડ ગ્રેડિયન્ટ */
+body {
+  background: linear-gradient(135deg, #fdf2f8 0%, #f3f4f6 100%);
+  margin: 0;
+  padding: 0;
+}
+
+.app-container {
+  font-family: 'Segoe UI', sans-serif;
+  color: #222;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.main-area {
+  min-height: 70vh;
+  margin-top: 25px;
+  padding: 0 20px;
+  perspective: 1000px; /* 3D એનિમેશન જોવા માટે આ બોક્સ હોવું જરૂરી છે */
+}
+
+.shop-layout {
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+/* 3D ઉભો સાઇડબાર */
+.sidebar-container {
+  flex: 1;
+  min-width: 250px;
+  max-width: 290px;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 25px;
+  height: fit-content;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.02);
+  border: 1px solid rgba(244, 51, 151, 0.1);
+  transform: rotateY(5deg); /* સાદો 3D ટિલ્ટ લુક */
+  transition: transform 0.5s ease;
+}
+
+.sidebar-container:hover {
+  transform: rotateY(0deg) scale(1.01);
+}
+
+.sidebar-title {
+  margin: 0 0 20px 0;
+  color: #333;
+  font-size: 18px;
+  font-weight: bold;
+  border-bottom: 2px solid #fdf2f8;
+  padding-bottom: 10px;
+}
+
+.category-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.category-btn, .category-btn-active {
+  width: 100%;
+  padding: 14px 18px;
+  text-align: left;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.category-btn {
+  background: #f9fafb;
+  color: #555;
+}
+
+.category-btn:hover {
+  background: #fdf2f8;
+  color: #f43397;
+  transform: translateX(5px);
+}
+
+.category-btn-active {
+  background: linear-gradient(135deg, #f43397 0%, #bc1e70 100%);
+  color: white;
+  box-shadow: 0 4px 15px rgba(244, 51, 151, 0.3);
+}
+
+.catalog-area {
+  flex: 3;
+}
+
+/* ફેડ-ઈન એનિમેશન પેજ લોડ થવા માટે */
+@keyframes fadeInPage {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.product-grid {
+  animation: fadeInPage 0.6s ease-out;
+}
+#root{
+  width:100% !important;
+}
+/* ============================================================================
+   Modern & Latest E-Commerce Footer (લૅટેસ્ટ આકર્ષક ફૂટર લુક)
+   ============================================================================ */
+.footer-container {
+  background-color: #111827; /* પ્રીમિયમ ડાર્ક ગ્રે કલર */
+  color: #9ca3af;
+  padding: 50px 40px 20px 40px;
+  margin-top: 60px;
+  border-radius: 24px 24px 0 0; /* ઉપરથી સુંદર ગોળ વણાંક */
+  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.04);
+}
+
+/* ત્રણ કોલમ્સ માટેનું મેઈન બોક્સ */
+.footer-grid {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  border-bottom: 1px solid #1f2937; /* આછી આડી લાઇન */
+  padding-bottom: 30px;
+}
+
+.footer-col {
+  flex: 1;
+  min-width: 220px;
+}
+
+.footer-col h4 {
+  color: #ffffff; /* હેડિંગ પ્યોર વ્હાઇટ */
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0 0 18px 0;
+  letter-spacing: 0.5px;
+}
+
+.footer-col p {
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.footer-links {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-links a {
+  color: #9ca3af;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  display: inline-block;
+}
+
+/* હોવર થતાં લિંક્સ પિંક થશે અને સહેજ આગળ ખસશે */
+.footer-links a:hover {
+  color: #f43397;
+  transform: translateX(4px);
+}
+
+/* સોશિયલ મીડિયા આઇકોન્સ રો */
+.social-icons-row {
+  display: flex;
+  gap: 12px;
+  margin-top: 5px;
+  margin-left:27%;
+}
+
+.social-circle-icon {
+  width: 36px;
+  height: 36px;
+  background-color: #1f2937;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.social-circle-icon:hover {
+  background: linear-gradient(135deg, #f43397 0%, #bc1e70 100%);
+  box-shadow: 0 4px 12px rgba(244, 51, 151, 0.35);
+  transform: translateY(-3px);
+}
+
+/* કોપીરાઇટ નીચેની છેલ્લી પટ્ટી */
+.footer-bottom-bar {
+  text-align: center;
+  padding-top: 20px;
+  font-size: 13px;
+  color: #6b7280;
+}
+/* ============================================================================
+   Meesho Premium Dynamic Animated Background (જીવંત કલર બદલાતું ૩D વાતાવરણ)
+   ============================================================================ */
+
+/* ૧. મુવિંગ કલર ગ્રેડિયન્ટ એનિમેશન વ્યાખ્યાયિત કરવું */
+@keyframes fluidGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ૨. હવામાં ફ્લોટિંગ થતા ઓબ્જેક્ટ્સનું એનિમેશન */
+@keyframes floatingShapes {
+  0% { transform: translateY(0px) rotate(0deg); opacity: 0.2; }
+  50% { transform: translateY(-25px) rotate(180deg); opacity: 0.4; }
+  100% { transform: translateY(0px) rotate(360deg); opacity: 0.2; }
+}
+
+body {
+  /* મીશો પિંક, સોફ્ટ પર્પલ અને સ્નો વ્હાઇટ કલરનું લાઈવ મિક્સચર */
+  background: linear-gradient(-45deg, #fdf2f8, #f5f3ff, #fdf2f8, #ffffff);
+  background-size: 400% 400%; /* કલર સ્મૂથલી ફેલાવવા માટે કદ મોટું કર્યું */
+  
+  /* એરો ફંક્શનની જેમ ૧૨ સેકન્ડની લૂપમાં કલર આપોઆપ બદલાશે */
+  animation: fluidGradient 12s ease infinite;
+  
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* ૩. સાઇટના બેકગ્રાઉન્ડમાં હવામાં તરતા ૩D બબલ્સ આકારો (Floating Glass Particles) */
+body::before, body::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(244, 51, 151, 0.15) 0%, rgba(188, 30, 112, 0.05) 100%);
+  backdrop-filter: blur(5px);
+  z-index: -1; /* આ આકારો કન્ટેન્ટની પાછળ છુપાયેલા રહેશે */
+  pointer-events: none; /* આના પર ક્લિક નહીં થઈ શકે */
+}
+
+/* ડાબી બાજુ ઉપરનો મોટો ગોળો */
+body::before {
+  width: 300px;
+  height: 300px;
+  top: 15%;
+  left: -100px;
+  animation: floatingShapes 8s ease-in-out infinite;
+}
+
+/* જમણી બાજુ નીચેનો નાનો ગોળો */
+body::after {
+  width: 200px;
+  height: 200px;
+  bottom: 20%;
+  right: -50px;
+  animation: floatingShapes 10s ease-in-out infinite-reverse; /* આ ઉંધી દિશામાં ફરશે */
+}
+
+/* ============================================================================
+   બાકીનું લેઆઉટ માળખું (સેમ બિગીનર-ફ્રેન્ડલી પેટર્ન)
+   ============================================================================ */
+.app-container {
+  font-family: 'Segoe UI', sans-serif;
+  color: #222;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.main-area {
+  min-height: 70vh;
+  margin-top: 25px;
+  padding: 0 20px;
+  perspective: 1000px; /* ૩D કાર્ડ્સ પ્રોજેક્ટ વાતાવરણ માટે */
+}
+/* ============================================================================
+   Meesho Premium Animated Floating Icons Background (હવામાં તરતા શોપિંગ આઇકોન્સ)
+   ============================================================================ */
+
+/* ૧. મુવિંગ કલર ગ્રેડિયન્ટ એનિમેશન (Fluid Flow) */
+@keyframes fluidGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ૨. હવામાં સ્મૂથલી તરવા અને ફરવા માટેનું એનિમેશન (Floating Effect) */
+@keyframes floatingIcons {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(8deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+/* ૩. થોડું અલગ પ્રકારનું ઉંધુ એનિમેશન જેથી બધા આઇકોન્સ એકસાથે ઉપર-નીચે ન થાય */
+@keyframes floatingIconsAlt {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(-8deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+body {
+  background: linear-gradient(-45deg, #fdf2f8, #f5f3ff, #fdf2f8, #ffffff);
+  background-size: 400% 400%;
+  animation: fluidGradient 12s ease infinite;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* ૪. બેકગ્રાઉન્ડના તરતા આઇકોન્સ માટેનું કન્ટેનર */
+.background-animation-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* આ આખું બોક્સ કન્ટેન્ટની પાછળ છુપાયેલું રહેશે */
+  pointer-events: none; /* આના બટન્સ કે લિંક્સ પર યુઝર ક્લિક નહિ કરી શકે */
+}
+
+/* આઇકોન્સની સાઇઝ અને આછો સુંદર કલર સેટ કરવો */
+.floating-icon {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  opacity: 0.15; /* આછા રાખ્યા છે જેથી પ્રોડક્ટ્સ વાંચવામાં તકલીફ ન પડે */
+}
+
+/* દરેક આઇકોનની સ્ક્રીન પર અલગ-અલગ જગ્યા (Positions) */
+.icon-bag-1 { top: 12%; left: 3%; animation: floatingIcons 6s ease-in-out infinite; }
+.icon-boy-1 { top: 25%; right: 4%; animation: floatingIconsAlt 7s ease-in-out infinite; }
+.icon-discount-1 { top: 45%; left: 5%; animation: floatingIconsAlt 5s ease-in-out infinite; }
+.icon-bag-2 { bottom: 30%; right: 3%; animation: floatingIcons 8s ease-in-out infinite; }
+.icon-discount-2 { bottom: 10%; left: 4%; animation: floatingIcons 6s ease-in-out infinite; }
+
+/* ============================================================================
+   લેઆઉટ માળખું
+   ============================================================================ */
+.app-container {
+  font-family: 'Segoe UI', sans-serif;
+  color: #222;
+  max-width: 1240px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.main-area {
+  min-height: 70vh;
+  margin-top: 25px;
+  padding: 0 20px;
+  perspective: 1000px;
+}
+body{
+  background: url("https://img.magnific.com/free-photo/3d-illustration-laptop-with-shopping-basket-paper-bags-online-shopping-e-commerce-concept_58466-14623.jpg") no-repeat;
+  background-size: cover;
+}

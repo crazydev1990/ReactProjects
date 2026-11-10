@@ -1,0 +1,129 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(244, 51, 151, 0.08);
+  padding: 15px 40px;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px); /* કાચ જેવો ટ્રાન્સપરન્ટ લુક */
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+}
+
+.logo-container img {
+  height: 38px;
+  transition: transform 0.3s ease;
+}
+
+.logo-container img:hover {
+  transform: scale(1.08) rotate(-2deg);
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #4b5563;
+  font-weight: bold;
+  font-size: 15px;
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: #f43397;
+}
+
+.active-link {
+  text-decoration: none;
+  color: #f43397;
+  font-weight: bold;
+  font-size: 15px;
+  border-bottom: 3px solid #f43397;
+  padding-bottom: 5px;
+}
+
+/* સુંદર 3D શોપિંગ કાર્ટ આઇકોન અને ગ્લોઇંગ બેજ */
+.cart-icon-wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 6px;
+  transition: transform 0.2s ease;
+}
+
+.cart-icon-wrapper:hover {
+  transform: scale(1.15);
+}
+
+.cart-svg {
+  width: 30px;
+  height: 30px;
+  fill: none;
+  stroke: #f43397;
+  stroke-width: 2.2;
+}
+
+.cart-count-badge {
+  position: absolute;
+  top: -2px;
+  right: -4px;
+  background: linear-gradient(135deg, #ff4e50 0%, #f43397 100%);
+  color: white;
+  font-size: 10px;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #fff;
+  box-shadow: 0 0 10px rgba(244, 51, 151, 0.5); /* નિયોન ગ્લો */
+}
+/* ============================================================================
+   Modern & Attractive Logout Button (લોગઆઉટ બટન માટે પ્રીમિયમ ડિઝાઇન)
+   ============================================================================ */
+.logout-btn {
+  /* સુંદર મોર્ડન રેડ ટુ ડાર્ક પિંક ગ્રેડિયન્ટ બેકગ્રાઉન્ડ */
+  background: linear-gradient(135deg, #ff4e50 0%, #f43397 100%);
+  color: white;
+  
+  /* બટનની આજુબાજુની સ્પેસ અને બોર્ડર રેડિયસ */
+  padding: 10px 22px;
+  border: none;
+  border-radius: 12px;
+  
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  
+  /* સોફ્ટ 3D અને ગ્લોઇંગ શેડો ઇફેક્ટ */
+  box-shadow: 0 4px 15px rgba(244, 51, 151, 0.25);
+  
+  /* સ્મૂથ હોવર એનિમેશન કંટ્રોલ */
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* જ્યારે યુઝર બટન પર માઉસ (Hover) લાવે ત્યારે - મોર્ડન માઇક્રો એનિમેશન */
+.logout-btn:hover {
+  transform: translateY(-2px) scale(1.03); /* સહેજ ઉપર આવશે અને મોટું થશે */
+  box-shadow: 0 8px 20px rgba(255, 78, 80, 0.4); /* વધુ ગ્લો થશે */
+  filter: brightness(1.05); /* કલર સહેજ વધુ બ્રાઇટ થશે */
+}
+
+/* જ્યારે યુઝર બટનને ક્લિક (Active Click) કરે ત્યારે */
+.logout-btn:active {
+  transform: translateY(1px) scale(0.98); /* સહેજ દબાયેલું લાગશે (3D Click) */
+  box-shadow: 0 2px 8px rgba(244, 51, 151, 0.2);
+}

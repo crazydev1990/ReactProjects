@@ -1,0 +1,27 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+@layer base {
+  html {
+    font-family: 'Roboto', sans-serif;
+  }
+}
+
+/* @layer components {
+  .btn {
+    @apply px-4 py-2 rounded-md text-white font-medium transition-colors duration-300;
+  }
+
+  .btn-primary {
+    @apply bg-blue-500 hover:bg-blue-600;
+  }
+
+  .btn-secondary {
+    @apply bg-gray-500 hover:bg-gray-600;
+  }
+
+  .btn-danger {
+    @apply bg-red-500 hover:bg-red-600;
+  }
+} */
+ 

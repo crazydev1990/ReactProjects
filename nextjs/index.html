@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>My name is </h1>
+    <form action="" method="post">
+        <input type="text" name="firstName" id="firstName">
+        <input type="text" name="lastName" id="lastName">
+        <input type="email" name="email" id="email">
+        <input type="password" name="password" id="password">
+        <input type="checkbox" name="checkbox" value="reading" id="">Readeing
+        <input type="file" name="myfile" id="">
+        <input type="submit" name="" id="" value="Send">
+    </form>
+
+    <script>
+
+        let h1 = document.querySelector("h1")
+
+        console.log(h1);
+        let form = document.querySelector("form")
+
+        form.addEventListener("submit", handlesubmit)
+
+        function handlesubmit(e) {
+            e.preventDefault()
+            console.log(e);
+
+            let formdata = new FormData(form)
+
+            let newArray = [...formdata.entries()]
+            console.log(newArray);
+
+
+            let firstName = "";
+            let lastName = "";
+            let fileName = ""
+
+            newArray.forEach((ele) => {
+                console.log(ele[0]);
+                if (ele[0] === "firstName") {
+                    firstName = ele[1];
+                }
+
+                if (ele[0] === "lastName") {
+                    lastName = ele[1];
+                }
+                if (ele[0] === "myfile") {
+                    fileName = ele[1];
+                }
+            });
+            console.log(fileName);
+
+            h1.innerHTML = "My name is " + firstName + " " + lastName;
+
+            // console.log();
+
+            // let firstName = document.querySelector("#firstName")
+            // let lastName = document.querySelector("#lastName")
+            // let email = document.querySelector("#email")
+            // let password = document.querySelector("#password")
+            // console.log(firstName.value);
+
+            // let user = {
+            //     firstName: firstName.value,
+            //     lastName: lastName.value,
+            //     email: email.value,
+            //     password: password.value,
+
+            // }
+            // console.log(lastName.value);
+            // console.log(email.value);
+            // console.log(password.value);
+            // console.log({ firstName, lastName, email, password });
+            // console.log(user);
+        }
+
+
+        // let user = {
+        //     name: "pankaj",
+        //     age: 23,
+        //     phone: 38423
+        // }
+        // // console.log(user.entries());
+        // console.log(Object.entries(user));
+
+
+
+
+    </script>
+</body>
+
+</html>
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Selected Image</title>
+</head>
+
+<body>
+
+    <h1>My name is</h1>
+
+    <form action="" method="post">
+        <input type="text" name="firstName" id="firstName" placeholder="First Name">
+        <input type="text" name="lastName" id="lastName" placeholder="Last Name">
+        <input type="email" name="email" id="email" placeholder="Email">
+        <input type="password" name="password" id="password" placeholder="Password">
+
+        <input type="checkbox" name="checkbox" value="reading"> Reading
+
+        <input type="file" name="myfile" id="myfile" accept="image/*">
+
+        <input type="submit" value="Send">
+    </form>
+
+    <br>
+
+    <img id="preview" width="200" alt="Selected image preview">
+
+    <script>
+        let h1 = document.querySelector("h1");
+        let form = document.querySelector("form");
+        let preview = document.querySelector("#preview");
+
+        form.addEventListener("submit", handlesubmit);
+
+        function handlesubmit(e) {
+            e.preventDefault();
+
+            let formdata = new FormData(form);
+            let newArray = [...formdata.entries()];
+
+            let firstName = "";
+            let lastName = "";
+            let fileName = null;
+
+            newArray.forEach((ele) => {
+                if (ele[0] === "firstName") {
+                    firstName = ele[1];
+                }
+
+                if (ele[0] === "lastName") {
+                    lastName = ele[1];
+                }
+
+                if (ele[0] === "myfile") {
+                    fileName = ele[1];
+                }
+            });
+
+            h1.innerHTML = "My name is " + firstName + " " + lastName;
+
+            if (fileName && fileName.size > 0) {
+                preview.src = URL.createObjectURL(fileName);
+                preview.style.display = "block";
+            } else {
+                preview.removeAttribute("src");
+            }
+        }
+    </script>
+
+</body>
+
+</html> -->

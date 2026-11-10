@@ -1,0 +1,172 @@
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 25px;
+  margin-top: 15px;
+}
+
+.product-card {
+  border: 1px solid rgba(0, 0, 0, 0.02);
+  padding: 20px;
+  border-radius: 16px;
+  background-color: #fff;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transform-style: preserve-3d; /* કાર્ડને 3D બોક્સ સ્પેસ આપવી */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+}
+/* ============================================================================
+   Horizontal Controls Bar (સર્ચ અને સોર્ટ ઓપ્શન માટેનો આડો આકર્ષક બાર)
+   ============================================================================ */
+.controls-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 25px;
+  
+  /* પ્રીમિયમ લુક માટે ગ્લાસમોર્ફિઝમ અને વ્હાઇટ બેકગ્રાઉન્ડ મિક્સ */
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(8px);
+  
+  padding: 16px 24px;
+  border-radius: 16px;
+  border: 1px solid rgba(244, 51, 151, 0.08); /* આછી મીશો પિંક બોર્ડર */
+  
+  /* સુંદર મોર્ડન સોફ્ટ શેડો ઇફેક્ટ */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03), 0 1px 3px rgba(0, 0, 0, 0.01);
+  animation: fadeInPage 0.5s ease-out;
+}
+
+/* મસ્ત રાઉન્ડ સર્ચ ઇનપુટ બોક્સ */
+.search-input {
+  flex: 1;
+  min-width: 280px;
+  padding: 12px 20px;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  font-size: 14px;
+  outline: none;
+  background-color: #f9fafb;
+  color: #374151;
+  
+  /* સ્મૂથ ફોકસ ટ્રાન્ઝિશન */
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* જ્યારે યુઝર સર્ચ બોક્સ પર ક્લિક (Focus) કરે ત્યારે ગ્લોઇંગ નિયોન ઇફેક્ટ */
+.search-input:focus {
+  border-color: #f43397;
+  background-color: #fff;
+  box-shadow: 0 0 0 4px rgba(244, 51, 151, 0.12); /* પિંક ગ્લો શેડો */
+}
+
+/* ડ્રોપડાઉન સિલેક્ટ બોક્સ (Sort By) */
+.sort-select {
+  padding: 12px 20px;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background-color: #f9fafb;
+  color: #374151;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  outline: none;
+  
+  /* સ્મૂથ ફોકસ ટ્રાન્ઝિશન */
+  transition: all 0.3s ease;
+}
+
+/* સોર્ટ બોક્સ પર હોવર અને ફોકસ ઇફેક્ટ */
+.sort-select:hover, .sort-select:focus {
+  border-color: #f43397;
+  background-color: #fff;
+  color: #f43397;
+}
+
+/* ડ્રોપડાઉનની અંદરના ઓપ્શન્સનો કલર રીસેટ કરવા માટે */
+.sort-select option {
+  color: #374151;
+  background-color: #fff;
+}
+
+/* 3D હોવર એનિમેશન - કાર્ડ ઉપર આવશે અને સહેજ મોટું થશે */
+.product-card:hover {
+  transform: translateY(-8px) scale(1.03) rotateX(2deg) rotateY(-2deg);
+  box-shadow: 0 20px 35px rgba(244, 51, 151, 0.08), 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.product-img {
+  width: 100%;
+  height: 150px;
+  object-fit: contain;
+  margin-bottom: 15px;
+  transition: transform 0.4s ease;
+}
+
+.product-card:hover .product-img {
+  transform: translateZ(20px) scale(1.05); /* ફોટો કાર્ડમાંથી બહાર આવતો લાગશે */
+}
+
+.product-title {
+  font-size: 14px;
+  color: #374151;
+  margin: 5px 0;
+  height: 40px;
+  overflow: hidden;
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+.product-price {
+  color: #111827;
+  font-weight: 800;
+  font-size: 24px;
+  margin: 8px 0;
+}
+
+.free-del {
+  font-size: 11px;
+  color: #047857;
+  background-color: #d1fae5;
+  padding: 4px 12px;
+  border-radius: 20px;
+  width: fit-content;
+  margin: 0 auto 15px auto;
+  font-weight: bold;
+}
+
+.add-btn {
+  background: linear-gradient(135deg, #f43397 0%, #bc1e70 100%);
+  color: white;
+  padding: 12px 15px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  width: 100%;
+  font-size: 14px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 10px rgba(244, 51, 151, 0.2);
+}
+
+.add-btn:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 15px rgba(244, 51, 151, 0.35);
+}
+
+.disabled-btn {
+  background-color: #e5e7eb;
+  color: #9ca3af;
+  border: none;
+  padding: 12px 15px;
+  border-radius: 10px;
+  cursor: not-allowed;
+  font-weight: bold;
+  width: 100%;
+}

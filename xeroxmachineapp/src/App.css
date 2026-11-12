@@ -1,0 +1,62 @@
+
+.app-container {
+  min-height: 100vh;
+  padding: 20px;
+  background: #020617;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+}
+
+.app-navigation {
+  max-width: 1050px;
+  margin: 0 auto 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.app-tab {
+  padding: 11px 20px;
+  border: 1px solid #334155;
+  border-radius: 25px;
+  background: #1e293b;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.app-tab:hover {
+  background: #334155;
+  transform: translateY(-2px);
+}
+
+.app-tab.active {
+  background: #10b981;
+  color: #020617;
+  border-color: #10b981;
+}
+
+.app-content {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (max-width: 600px) {
+  .app-container {
+    padding: 12px;
+  }
+
+  .app-navigation {
+    gap: 7px;
+  }
+
+  .app-tab {
+    padding: 9px 13px;
+    font-size: 12px;
+  }
+}
